@@ -6,6 +6,8 @@ let errors = {
 
 var web3;
 
+var started = false;
+
 var networkId;
 var network;
 var tokenABIArray;
@@ -223,14 +225,23 @@ function queryDABInfo() {
 
   }
 
-  setInterval(query, 3000);
+  setInterval(query, 5000);
 
 }
 
-initEthereum();
+if(!started){
+  initEthereum();
+  started = true;
+}
+
 
 exports.all = function(req, res) {
-  var data = {status: 1, data: {blockNumber: blockNumber, depositFund: depositFund, depositPrice: depositPrice, depositBalance: depositBalance, depositSupply: depositSupply, creditFund: creditFund, creditPrice: creditPrice, creditBalance: creditBalance, creditSupply: creditSupply}};
+  var data;
+  if(typeof blockNumber !=='undefined'){
+    data = {status: 1, data: {blockNumber: blockNumber, depositFund: depositFund, depositPrice: depositPrice, depositBalance: depositBalance, depositSupply: depositSupply, creditFund: creditFund, creditPrice: creditPrice, creditBalance: creditBalance, creditSupply: creditSupply}};
+  }else{
+    data = {status: 0}
+  }
   res.json(data);
 };
 
