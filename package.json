@@ -1,0 +1,32 @@
+{
+  "name": "dab-dapp-api",
+  "version": "1.0.0",
+  "description": "DAB contracts RESTful Api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DAB-Foundation/dab-dapp-api.git"
+  },
+  "keywords": [
+    "RESTful",
+    "API"
+  ],
+  "author": "dabdevelop",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/DAB-Foundation/dab-dapp-api/issues"
+  },
+  "homepage": "https://github.com/DAB-Foundation",
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "web3": "^0.18.2"
+  }
+}
