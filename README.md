@@ -6,8 +6,12 @@ clone the project
 ### Installations
 
     npm install
+    npm install forever -g
 
 ### Run
 
-    npm run start
+    forever --minUptime 10000 --spinSleepTime 26000 start server.js
+
+
+
 
